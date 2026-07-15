@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git git 'https://github.com/umair-sardar/Flask-MySQL-Manual-Network-Jenkins-CICD-.git'
+               git 'https://github.com/umair-sardar/Flask-MySQL-Manual-Network-Jenkins-CICD-.git'
             }
         }
         stage('Build Image') {
