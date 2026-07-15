@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask + MySQL App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        input, button { padding: 10px; font-size: 16px; border-radius: 4px; border: 1px solid #ccc; }
+        button { background-color: #007BFF; color: white; cursor: pointer; border: none; }
+        button:hover { background-color: #0056b3; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #eee; margin: 5px 0; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add User</h2>
+        <form action="/add" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            <button type="submit">Add User</button>
+        </form>
+
+        <h2>Registered Users</h2>
+        <ul>
+            {% for user in users %}
+                <li><strong>{{ user.name }}</strong> - {{ user.email }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
