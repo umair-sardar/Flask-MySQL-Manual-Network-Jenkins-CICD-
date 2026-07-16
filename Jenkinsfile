@@ -1,9 +1,9 @@
-pipeline {
+pipeline 
     agent any
     stages {
         stage('Checkout') {
             steps {
-               git 'https://github.com/umair-sardar/Flask-MySQL-Manual-Network-Jenkins-CICD-.git'
+               git branch: 'main', url: 'https://github.com/umair-sardar/Flask-MySQL-Manual-Network-Jenkins-CICD-.git'
             }
         }
         stage('Build Image') {
